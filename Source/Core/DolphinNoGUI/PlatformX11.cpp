@@ -61,8 +61,8 @@ private:
 #  unsigned int m_window_width = Config::Get(Config::MAIN_RENDER_WINDOW_WIDTH);
 #  unsigned int m_window_height = Config::Get(Config::MAIN_RENDER_WINDOW_HEIGHT);
   int screen = DefaultScreen(m_display);
-  m_window_width = DisplayWidth(m_display, screen);
-  m_window_height = DisplayHeight(m_display, screen);
+  int m_window_width = DisplayWidth(m_display, screen);
+  int m_window_height = DisplayHeight(m_display, screen);
 
 };
 
