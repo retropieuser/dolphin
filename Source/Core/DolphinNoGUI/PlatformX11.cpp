@@ -58,8 +58,12 @@ private:
 #endif
   int m_window_x = Config::Get(Config::MAIN_RENDER_WINDOW_XPOS);
   int m_window_y = Config::Get(Config::MAIN_RENDER_WINDOW_YPOS);
-  unsigned int m_window_width = Config::Get(Config::MAIN_RENDER_WINDOW_WIDTH);
-  unsigned int m_window_height = Config::Get(Config::MAIN_RENDER_WINDOW_HEIGHT);
+#  unsigned int m_window_width = Config::Get(Config::MAIN_RENDER_WINDOW_WIDTH);
+#  unsigned int m_window_height = Config::Get(Config::MAIN_RENDER_WINDOW_HEIGHT);
+  int screen = DefaultScreen(m_display);
+  m_window_width = DisplayWidth(m_display, screen);
+  m_window_height = DisplayHeight(m_display, screen);
+
 };
 
 PlatformX11::~PlatformX11()
